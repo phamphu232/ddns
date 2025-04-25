@@ -2,7 +2,7 @@
 
 # Set cron job
 # nano /etc/crontab
-# 0 0 * * * root /path/to/cloudflare.sh 'your_auth_token' 'your_zone_id' 'home.example.com'
+# */5 * * * * root /path/to/cloudflare.sh 'your_auth_token' 'your_zone_id' 'home.example.com'
 
 # Check if required arguments are provided
 if [ $# -lt 3 ]; then
@@ -22,7 +22,6 @@ zone_identifier="$2"
 # DNS record for synchronization
 # https://dash.cloudflare.com/dns 
 record_name="$3"
-
 
 # DO NOT CHANGE LINES BELOW
 
